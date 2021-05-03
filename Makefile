@@ -36,9 +36,9 @@ ifdef DEBUG
 override CFLAGS += -DDEBUG -g -O0
 endif
 
-PG_CONFIG = pg_config
-PGXS := $(shell $(PG_CONFIG) --pgxs)
-include $(PGXS)
+top_builddir = ../..
+include $(top_builddir)/src/Makefile.global
+include $(top_srcdir)/contrib/contrib-global.mk
 
 GENERATED_SQL_FILES = $(wildcard $(TEST_DIR)/sql/*.sql)
 
