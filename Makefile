@@ -30,7 +30,7 @@ TEST_DIR = test/
 REGRESS = $(notdir $(basename $(sort $(wildcard $(TEST_DIR)/sql/*test.sql))))
 REGRESS_OPTS = --inputdir='$(TEST_DIR)' --outputdir='$(TEST_DIR)' --user='postgres' --load-extension=odbc_fdw
 
-SHLIB_LINK = -lodbc
+SHLIB_LINK = -lodbc32
 
 ifdef DEBUG
 override CFLAGS += -DDEBUG -g -O0
